@@ -1,0 +1,563 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E194B20A161370063C1AA /* AppDelegate.swift */; };
+		E80E194E20A161370063C1AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E194D20A161370063C1AA /* ViewController.swift */; };
+		E80E195120A161370063C1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80E194F20A161370063C1AA /* Main.storyboard */; };
+		E80E195320A161370063C1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80E195220A161370063C1AA /* Assets.xcassets */; };
+		E80E195620A161370063C1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80E195420A161370063C1AA /* LaunchScreen.storyboard */; };
+		E80E196120A161370063C1AA /* BitcoinXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E196020A161370063C1AA /* BitcoinXTests.swift */; };
+		E80E196C20A161370063C1AA /* BitcoinXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E196B20A161370063C1AA /* BitcoinXUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E80E195D20A161370063C1AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E80E194020A161370063C1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E80E194720A161370063C1AA;
+			remoteInfo = BitcoinX;
+		};
+		E80E196820A161370063C1AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E80E194020A161370063C1AA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E80E194720A161370063C1AA;
+			remoteInfo = BitcoinX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E80E194820A161370063C1AA /* BitcoinX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80E194B20A161370063C1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E80E194D20A161370063C1AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E80E195020A161370063C1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E80E195220A161370063C1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E80E195520A161370063C1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E80E195720A161370063C1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80E195C20A161370063C1AA /* BitcoinXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80E196020A161370063C1AA /* BitcoinXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinXTests.swift; sourceTree = "<group>"; };
+		E80E196220A161370063C1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E80E196720A161370063C1AA /* BitcoinXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E80E196B20A161370063C1AA /* BitcoinXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinXUITests.swift; sourceTree = "<group>"; };
+		E80E196D20A161370063C1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E80E194520A161370063C1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E195920A161370063C1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E196420A161370063C1AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E80E193F20A161370063C1AA = {
+			isa = PBXGroup;
+			children = (
+				E80E194A20A161370063C1AA /* BitcoinX */,
+				E80E195F20A161370063C1AA /* BitcoinXTests */,
+				E80E196A20A161370063C1AA /* BitcoinXUITests */,
+				E80E194920A161370063C1AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E80E194920A161370063C1AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E80E194820A161370063C1AA /* BitcoinX.app */,
+				E80E195C20A161370063C1AA /* BitcoinXTests.xctest */,
+				E80E196720A161370063C1AA /* BitcoinXUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E80E194A20A161370063C1AA /* BitcoinX */ = {
+			isa = PBXGroup;
+			children = (
+				E80E194B20A161370063C1AA /* AppDelegate.swift */,
+				E80E194D20A161370063C1AA /* ViewController.swift */,
+				E80E194F20A161370063C1AA /* Main.storyboard */,
+				E80E195220A161370063C1AA /* Assets.xcassets */,
+				E80E195420A161370063C1AA /* LaunchScreen.storyboard */,
+				E80E195720A161370063C1AA /* Info.plist */,
+			);
+			path = BitcoinX;
+			sourceTree = "<group>";
+		};
+		E80E195F20A161370063C1AA /* BitcoinXTests */ = {
+			isa = PBXGroup;
+			children = (
+				E80E196020A161370063C1AA /* BitcoinXTests.swift */,
+				E80E196220A161370063C1AA /* Info.plist */,
+			);
+			path = BitcoinXTests;
+			sourceTree = "<group>";
+		};
+		E80E196A20A161370063C1AA /* BitcoinXUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E80E196B20A161370063C1AA /* BitcoinXUITests.swift */,
+				E80E196D20A161370063C1AA /* Info.plist */,
+			);
+			path = BitcoinXUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E80E194720A161370063C1AA /* BitcoinX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80E197020A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinX" */;
+			buildPhases = (
+				E80E194420A161370063C1AA /* Sources */,
+				E80E194520A161370063C1AA /* Frameworks */,
+				E80E194620A161370063C1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BitcoinX;
+			productName = BitcoinX;
+			productReference = E80E194820A161370063C1AA /* BitcoinX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E80E195B20A161370063C1AA /* BitcoinXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80E197320A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinXTests" */;
+			buildPhases = (
+				E80E195820A161370063C1AA /* Sources */,
+				E80E195920A161370063C1AA /* Frameworks */,
+				E80E195A20A161370063C1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E80E195E20A161370063C1AA /* PBXTargetDependency */,
+			);
+			name = BitcoinXTests;
+			productName = BitcoinXTests;
+			productReference = E80E195C20A161370063C1AA /* BitcoinXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E80E196620A161370063C1AA /* BitcoinXUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E80E197620A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinXUITests" */;
+			buildPhases = (
+				E80E196320A161370063C1AA /* Sources */,
+				E80E196420A161370063C1AA /* Frameworks */,
+				E80E196520A161370063C1AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E80E196920A161370063C1AA /* PBXTargetDependency */,
+			);
+			name = BitcoinXUITests;
+			productName = BitcoinXUITests;
+			productReference = E80E196720A161370063C1AA /* BitcoinXUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E80E194020A161370063C1AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = acyooman;
+				TargetAttributes = {
+					E80E194720A161370063C1AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					E80E195B20A161370063C1AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E80E194720A161370063C1AA;
+					};
+					E80E196620A161370063C1AA = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E80E194720A161370063C1AA;
+					};
+				};
+			};
+			buildConfigurationList = E80E194320A161370063C1AA /* Build configuration list for PBXProject "BitcoinX" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E80E193F20A161370063C1AA;
+			productRefGroup = E80E194920A161370063C1AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E80E194720A161370063C1AA /* BitcoinX */,
+				E80E195B20A161370063C1AA /* BitcoinXTests */,
+				E80E196620A161370063C1AA /* BitcoinXUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E80E194620A161370063C1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80E195620A161370063C1AA /* LaunchScreen.storyboard in Resources */,
+				E80E195320A161370063C1AA /* Assets.xcassets in Resources */,
+				E80E195120A161370063C1AA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E195A20A161370063C1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E196520A161370063C1AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E80E194420A161370063C1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80E194E20A161370063C1AA /* ViewController.swift in Sources */,
+				E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E195820A161370063C1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80E196120A161370063C1AA /* BitcoinXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80E196320A161370063C1AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E80E196C20A161370063C1AA /* BitcoinXUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E80E195E20A161370063C1AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E80E194720A161370063C1AA /* BitcoinX */;
+			targetProxy = E80E195D20A161370063C1AA /* PBXContainerItemProxy */;
+		};
+		E80E196920A161370063C1AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E80E194720A161370063C1AA /* BitcoinX */;
+			targetProxy = E80E196820A161370063C1AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E80E194F20A161370063C1AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E80E195020A161370063C1AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E80E195420A161370063C1AA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E80E195520A161370063C1AA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E80E196E20A161370063C1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E80E196F20A161370063C1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E80E197120A161370063C1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E80E197220A161370063C1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinX/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E80E197420A161370063C1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitcoinX.app/BitcoinX";
+			};
+			name = Debug;
+		};
+		E80E197520A161370063C1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitcoinX.app/BitcoinX";
+			};
+			name = Release;
+		};
+		E80E197720A161370063C1AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BitcoinX;
+			};
+			name = Debug;
+		};
+		E80E197820A161370063C1AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
+				INFOPLIST_FILE = BitcoinXUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinXUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = BitcoinX;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E80E194320A161370063C1AA /* Build configuration list for PBXProject "BitcoinX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80E196E20A161370063C1AA /* Debug */,
+				E80E196F20A161370063C1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80E197020A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80E197120A161370063C1AA /* Debug */,
+				E80E197220A161370063C1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80E197320A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80E197420A161370063C1AA /* Debug */,
+				E80E197520A161370063C1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E80E197620A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinXUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E80E197720A161370063C1AA /* Debug */,
+				E80E197820A161370063C1AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E80E194020A161370063C1AA /* Project object */;
+}
