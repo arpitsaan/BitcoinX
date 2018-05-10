@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--BitcoinX Watch UI Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="WatchPricesController" title="BitcoinX Watch UI Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitcoinXWatch" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="uwl-by-NTZ">
+                            <items>
+                                <tableRow identifier="WatchPricesRow" selectable="NO" id="B3Y-TO-0ZO">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="EFR-Za-ZWK">
+                                        <items>
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="bitcoin-logo" id="g4y-Qo-5F2">
+                                                <color key="tintColor" red="0.98039215686274506" green="0.62745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="O5V-nW-APP">
+                                                <color key="color" red="0.98039215686274506" green="0.62745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </separator>
+                                            <group alignment="left" layout="vertical" spacing="0.0" id="KVV-AG-qU1">
+                                                <items>
+                                                    <label alignment="left" text="12-10-2012" id="LH8-tS-h52">
+                                                        <color key="textColor" white="0.77113172743055558" alpha="0.80340325342465757" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" name="AvenirNext-Bold" family="Avenir Next" pointSize="10"/>
+                                                    </label>
+                                                    <label alignment="left" text="9.53 EUR" id="xFC-0T-t9T">
+                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                    </label>
+                                                </items>
+                                            </group>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>

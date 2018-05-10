@@ -2,7 +2,7 @@
 //  BitcoinXTests.swift
 //  BitcoinXTests
 //
-//  Created by zom on 08/05/18.
+//  Created by Arpit Agarwal on 08/05/18.
 //  Copyright © 2018 acyooman. All rights reserved.
 //
 
