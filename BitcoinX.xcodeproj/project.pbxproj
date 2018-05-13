@@ -47,6 +47,7 @@
 		E8C8DA5D20A8A76800681EC3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3920A8A57F00681EC3 /* Disk.swift */; };
 		E8C8DA5E20A8A76800681EC3 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */; };
 		E8C8DA6020A8B42100681EC3 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA5F20A8B42100681EC3 /* UIColor+Additions.swift */; };
+		E8C8DA6120A8BC8C00681EC3 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA5F20A8B42100681EC3 /* UIColor+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -587,6 +588,7 @@
 				E8C8DA5D20A8A76800681EC3 /* Disk.swift in Sources */,
 				E857A75E20A84985001801DD /* Double+Additions.swift in Sources */,
 				E89BD55620A32DA300572932 /* InterfaceController.swift in Sources */,
+				E8C8DA6120A8BC8C00681EC3 /* UIColor+Additions.swift in Sources */,
 				E857A75920A83035001801DD /* PriceRowController.swift in Sources */,
 				E8348AF320A45B7A00BD6F89 /* HistoricalData.swift in Sources */,
 				E8C8DA5820A8A76800681EC3 /* Disk+Data.swift in Sources */,

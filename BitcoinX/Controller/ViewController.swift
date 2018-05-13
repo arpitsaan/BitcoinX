@@ -124,11 +124,11 @@ extension ViewController: UITableViewDataSource {
                 cell = UITableViewCell.init(style: .value1, reuseIdentifier: "BitcoinXRealtimeRowIdentifier")
             }
             let realtimeValue:Double = (self.coindeskApiObject.realtimeData?.bpi.eur.rateFloat)!
-            cell?.textLabel?.text = realtimeValue.formatAsEuro()
-            cell?.detailTextLabel?.text = self.coindeskApiObject.realtimeData?.time.updated
+            cell?.detailTextLabel?.text = realtimeValue.formatAsEuro()
+            cell?.textLabel?.text = self.coindeskApiObject.realtimeData?.time.updated
             
-            cell?.detailTextLabel?.textColor = UIColor.bxDarkTheme.gray
-            cell?.textLabel?.textColor = UIColor.bxDarkTheme.orange
+            cell?.detailTextLabel?.textColor = UIColor.bxDarkTheme.orange
+            cell?.textLabel?.textColor =  UIColor.bxDarkTheme.gray
             cell?.backgroundColor = UIColor.black
             
             return cell!
@@ -146,11 +146,11 @@ extension ViewController: UITableViewDataSource {
             let rate = self.coindeskApiObject.historicalData?.bpi[keysArray[indexPath.row]]
             print(rate as Any)
             
-            cell?.textLabel?.text = rate?.formatAsEuro()
-            cell?.detailTextLabel?.text = date
+            cell?.detailTextLabel?.text = rate?.formatAsEuro()
+            cell?.textLabel?.text = date
             
-            cell?.detailTextLabel?.textColor = UIColor.bxDarkTheme.gray
-            cell?.textLabel?.textColor = UIColor.white
+            cell?.detailTextLabel?.textColor = UIColor.white
+            cell?.textLabel?.textColor = UIColor.bxDarkTheme.gray
             cell?.backgroundColor = UIColor.black
             
             return cell!

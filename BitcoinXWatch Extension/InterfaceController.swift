@@ -35,6 +35,7 @@ class InterfaceController: WKInterfaceController {
             let rate:Double = (self.pricesAPI.realtimeData?.bpi.eur.rateFloat)!
             controller.dateLabel.setText(self.pricesAPI.realtimeData?.time.updated)
             controller.priceLabel.setText(rate.formatAsEuro())
+            controller.priceLabel.setTextColor(UIColor.bxDarkTheme.orange)
         }
         
         //historial prices
@@ -54,6 +55,7 @@ class InterfaceController: WKInterfaceController {
             let rate:Double = (self.pricesAPI.historicalData?.bpi[dateString])!
             controller.dateLabel.setText(dateString)
             controller.priceLabel.setText(rate.formatAsEuro())
+            controller.priceLabel.setTextColor(UIColor.white)
             index += 1;
         }
     }
