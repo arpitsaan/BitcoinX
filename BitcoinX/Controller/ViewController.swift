@@ -84,8 +84,8 @@ extension ViewController: CoindeskAPIDelegate {
     
     func realtimeDataFetchFailedWithError(error: Error) {
         showError = true
-        self.tableView.reloadData()
         errorMessage = error.localizedDescription
+        self.tableView.reloadData()
         self.resetNavigationTitle()
     }
     
@@ -97,8 +97,8 @@ extension ViewController: CoindeskAPIDelegate {
     
     func historialDataFetchFailedWithError(error: Error) {
         showError = true
-        self.resetNavigationTitle()
         errorMessage = error.localizedDescription
+        self.resetNavigationTitle()
         self.tableView.reloadData()
     }
 }
