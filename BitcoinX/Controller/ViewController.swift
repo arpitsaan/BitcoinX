@@ -64,7 +64,7 @@ extension ViewController: UITableViewDataSource {
             cell = UITableViewCell.init(style: .value1, reuseIdentifier: "randomId")
         }
         
-        let keysArray = Array((self.coindeskApiObject.latestData?.bpi.keys)!) // for Dictionary
+        let keysArray = Array((self.coindeskApiObject.latestData?.bpi.keys)!).sorted(by: >)
 
         let date = keysArray[indexPath.row]
         let rate = self.coindeskApiObject.latestData?.bpi[keysArray[indexPath.row]]
