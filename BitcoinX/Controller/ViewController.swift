@@ -37,9 +37,18 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CoindeskAPIDelegate {
+    func realtimeDataFetchedSuccessfully() {
+        self.tableView.reloadData()
+    }
+    
+    func realtimeDataFetchFailedWithError(error: Error) {
+        self.tableView.reloadData()
+    }
+    
     func getDataFromAPIService() {
         self.coindeskApiObject.delegate = self
-        self.coindeskApiObject.fetchLatestData()
+        self.coindeskApiObject.fetchRealtimeData()
+        self.coindeskApiObject.fetchHistoricalData()
     }
     
     func historialDataFetchFailedWithError(error: Error) {
@@ -52,33 +61,71 @@ extension ViewController: CoindeskAPIDelegate {
 }
 
 extension ViewController: UITableViewDataSource {
+    
+    enum tableSection:Int {
+        case loader = 0
+        case realtimePrice
+        case historialPrices
+        case sectionCount
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return tableSection.sectionCount.rawValue
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.coindeskApiObject.latestData != nil {
-            return (self.coindeskApiObject.latestData?.bpi.count)!
+        switch section {
+        case tableSection.loader.rawValue:
+            return 0
+            
+        case tableSection.realtimePrice.rawValue:
+            return self.coindeskApiObject.isRealtimeDataAvailable() ? 1 : 0
+            
+        case tableSection.historialPrices.rawValue:
+            return self.coindeskApiObject.getHistoricalDataRowsCount()
+            
+        default:
+            return 0
         }
-        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRowIdentifier")
-        if (cell == nil) {
-            cell = UITableViewCell.init(style: .value1, reuseIdentifier: "BitcoinXRowIdentifier")
+        switch indexPath.section {
+            
+        case tableSection.realtimePrice.rawValue:
+            var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRealtimeRowIdentifier")
+            
+            if (cell == nil) {
+                cell = UITableViewCell.init(style: .value1, reuseIdentifier: "BitcoinXRealtimeRowIdentifier")
+            }
+            let realtimeValue:Double = (self.coindeskApiObject.realtimeData?.bpi.eur.rateFloat)!
+            cell?.textLabel?.text = realtimeValue.formatAsEuro()
+            cell?.detailTextLabel?.text = self.coindeskApiObject.realtimeData?.time.updated
+            
+            return cell!
+           
+        case tableSection.historialPrices.rawValue:
+            var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRowIdentifier")
+            
+            if (cell == nil) {
+                cell = UITableViewCell.init(style: .value1, reuseIdentifier: "BitcoinXRowIdentifier")
+            }
+            
+            let keysArray = Array((self.coindeskApiObject.historicalData?.bpi.keys)!).sorted(by: >)
+            
+            let date = keysArray[indexPath.row]
+            let rate = self.coindeskApiObject.historicalData?.bpi[keysArray[indexPath.row]]
+            print(rate as Any)
+            
+            cell?.textLabel?.text = rate?.formatAsEuro()
+            cell?.detailTextLabel?.text = date
+            
+            return cell!
+            
+        default:
+            return UITableViewCell.init()
         }
         
-        let keysArray = Array((self.coindeskApiObject.latestData?.bpi.keys)!).sorted(by: >)
-
-        let date = keysArray[indexPath.row]
-        let rate = self.coindeskApiObject.latestData?.bpi[keysArray[indexPath.row]]
-        print(rate as Any)
-        
-        cell?.textLabel?.text = rate?.formatAsEuro()
-        cell?.detailTextLabel?.text = date
-
-        return cell!
     }
     
     

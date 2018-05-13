@@ -15,11 +15,11 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var pricesTable: WKInterfaceTable!
     
     @IBOutlet var statusLabel: WKInterfaceLabel!
-    var priceList:CoindeskData?
+    var priceList:HistoricalData?
     var pricesAPI = CoindeskAPI.init()
     
     func tableRefresh(){
-        let rowCount = (self.pricesAPI.latestData?.bpi.count)!
+        let rowCount = (self.pricesAPI.historicalData?.bpi.count)!
         
         guard rowCount>0 else {
              return
@@ -27,12 +27,12 @@ class InterfaceController: WKInterfaceController {
         
         pricesTable.setNumberOfRows(rowCount, withRowType: "BitcoinPriceRow")
         
-        let keysArray = Array((self.pricesAPI.latestData?.bpi.keys)!).sorted(by: >)
+        let keysArray = Array((self.pricesAPI.historicalData?.bpi.keys)!).sorted(by: >)
         
         var index = 0
         for dateString in keysArray {
             guard let controller = pricesTable.rowController(at: index) as? PriceRowController else { continue }
-            let rate:Double = (self.pricesAPI.latestData?.bpi[dateString])!
+            let rate:Double = (self.pricesAPI.historicalData?.bpi[dateString])!
             controller.dateLabel.setText(dateString)
             controller.priceLabel.setText(rate.formatAsEuro())
             index += 1;
@@ -42,12 +42,22 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.pricesAPI.delegate = self
-        self.pricesAPI.fetchLatestData()
+        self.pricesAPI.fetchHistoricalData()
         statusLabel.setText("Loading...")
     }
 }
 
 extension InterfaceController: CoindeskAPIDelegate {
+    func realtimeDataFetchedSuccessfully() {
+        statusLabel.setHidden(true)
+        tableRefresh()
+    }
+    
+    func realtimeDataFetchFailedWithError(error: Error) {
+        statusLabel.setHidden(false)
+        self.statusLabel.setText("Something went wrong in fetching price index data.")
+    }   
+    
     func historialDataFetchedSuccessfully() {
         statusLabel.setHidden(true)
         tableRefresh()
@@ -57,8 +67,6 @@ extension InterfaceController: CoindeskAPIDelegate {
         statusLabel.setHidden(false)
         self.statusLabel.setText("Something went wrong in fetching price index data.")
     }
-    
-    
 }
 
 

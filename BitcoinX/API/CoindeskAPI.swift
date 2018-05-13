@@ -9,34 +9,77 @@
 import UIKit
 
 protocol CoindeskAPIDelegate: class {
+    func realtimeDataFetchedSuccessfully()
+    func realtimeDataFetchFailedWithError(error: Error)
     
     func historialDataFetchedSuccessfully()
-    
     func historialDataFetchFailedWithError(error: Error)
 }
 
 class CoindeskAPI: NSObject {
     private var currencyCode = "EUR"
-    var latestData:CoindeskData?
+    var historicalData:HistoricalData?
+    var realtimeData:RealtimeData?
     weak var delegate:CoindeskAPIDelegate?
-
-    public func fetchLatestData() {
+    
+    func isRealtimeDataAvailable() -> Bool {
+        guard realtimeData != nil else {
+            return false
+        }
         
-       URLSession.shared.dataTask(with: getAPIUrl()) { (data, response, error) in
+        return realtimeData!.bpi.eur.rateFloat > 0.0
+    }
+    
+    func getHistoricalDataRowsCount() -> Int {
+        guard historicalData != nil else {
+            return 0
+        }
+        
+        return (historicalData?.bpi.count)!
+    }
+
+    public func fetchRealtimeData() {
+        
+        URLSession.shared.dataTask(with: getRealtimeAPIUrl()) { (data, response, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                self.delegate?.realtimeDataFetchFailedWithError(error: error!)
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                self.realtimeData = try JSONDecoder().decode(RealtimeData.self, from: data)
+                
+                //Get back to the main queue
+                DispatchQueue.main.async {
+                    print(self.realtimeData!)
+                    self.delegate?.realtimeDataFetchedSuccessfully()
+                }
+                
+            } catch let jsonError {
+                print(jsonError)
+            }
+            
+            }.resume()
+    }
+    
+    public func fetchHistoricalData() {
+        
+       URLSession.shared.dataTask(with: getHistoricalAPIUrl()) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
                 self.delegate?.historialDataFetchFailedWithError(error: error!)
             }
             
             guard let data = data else { return }
-            //Implement JSON decoding and parsing
+        
             do {
-                //Decode retrived data with JSONDecoder and assing type of Coinbasedata object
-                self.latestData = try JSONDecoder().decode(CoindeskData.self, from: data)
+                self.historicalData = try JSONDecoder().decode(HistoricalData.self, from: data)
                 
                 //Get back to the main queue
                 DispatchQueue.main.async {
-                    print(self.latestData!)
+                    print(self.historicalData!)
                     self.delegate?.historialDataFetchedSuccessfully()
                 }
                 
@@ -68,7 +111,7 @@ extension CoindeskAPI {
         return todaysDateString
     }
     
-    private func getAPIUrl() -> URL {
+    private func getHistoricalAPIUrl() -> URL {
         let urlComps = NSURLComponents(string: "https://api.coindesk.com/v1/bpi/historical/close.json")!
         
         let queryItems = [NSURLQueryItem(name: "currency", value: self.currencyCode),
@@ -80,5 +123,12 @@ extension CoindeskAPI {
         guard let url = urlComps.url else { return URL.init(string: "")! }
         
         return url
+    }
+    
+    private func getRealtimeAPIUrl() -> URL {
+        var realtimeUrl = "https://api.coindesk.com/v1/bpi/currentprice/"
+        realtimeUrl.append(self.currencyCode)
+        realtimeUrl.append(".json")
+        return URL.init(string: realtimeUrl)!
     }
 }

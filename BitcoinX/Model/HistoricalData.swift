@@ -1,5 +1,5 @@
 //
-//  CoindeskData.swift
+//  HistoricalData.swift
 //  BitcoinX
 //
 //  Created by Arpit Agarwal on 10/05/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CoindeskData: Codable {
+struct HistoricalData: Codable {
     let bpi: [String: Double] //Bitcoin price index : Date -> Price
     let disclaimer: String
     let time: Time
