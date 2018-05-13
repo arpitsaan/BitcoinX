@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E194B20A161370063C1AA /* AppDelegate.swift */; };
 		E80E194E20A161370063C1AA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E194D20A161370063C1AA /* ViewController.swift */; };
-		E80E195120A161370063C1AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80E194F20A161370063C1AA /* Main.storyboard */; };
 		E80E195320A161370063C1AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E80E195220A161370063C1AA /* Assets.xcassets */; };
 		E80E195620A161370063C1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80E195420A161370063C1AA /* LaunchScreen.storyboard */; };
 		E80E196120A161370063C1AA /* BitcoinXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E196020A161370063C1AA /* BitcoinXTests.swift */; };
@@ -91,7 +90,6 @@
 		E80E194820A161370063C1AA /* BitcoinX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E194B20A161370063C1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E80E194D20A161370063C1AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E80E195020A161370063C1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E80E195220A161370063C1AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E80E195520A161370063C1AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E80E195720A161370063C1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,7 +239,6 @@
 		E857A74F20A7CD2F001801DD /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E80E194F20A161370063C1AA /* Main.storyboard */,
 				E80E195220A161370063C1AA /* Assets.xcassets */,
 				E80E195420A161370063C1AA /* LaunchScreen.storyboard */,
 				E80E195720A161370063C1AA /* Info.plist */,
@@ -451,7 +448,6 @@
 			files = (
 				E80E195620A161370063C1AA /* LaunchScreen.storyboard in Resources */,
 				E80E195320A161370063C1AA /* Assets.xcassets in Resources */,
-				E80E195120A161370063C1AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,14 +597,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E80E194F20A161370063C1AA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E80E195020A161370063C1AA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E80E195420A161370063C1AA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

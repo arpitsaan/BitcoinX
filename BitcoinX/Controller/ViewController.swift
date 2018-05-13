@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Rest API"
+        navigationItem.title = "Bitcoin EUR for last 15 days"
         
         tableView.dataSource = self
+        tableView.allowsSelection = false
         
         self.view.addSubview(tableView)
         tableView.fillSuperView()
@@ -28,6 +29,10 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
 }
 
@@ -77,15 +82,5 @@ extension ViewController: UITableViewDataSource {
     }
     
     
-}
-
-extension ViewController {
-    
-    }
-
-extension ViewController {
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
 }
 

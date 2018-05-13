@@ -9,7 +9,7 @@
 import UIKit
 
 struct CoindeskData: Codable {
-    let bpi: [String: Double]
+    let bpi: [String: Double] //Bitcoin price index : Date -> Price
     let disclaimer: String
     let time: Time
 }
