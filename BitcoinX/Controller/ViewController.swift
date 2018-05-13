@@ -76,26 +76,28 @@ extension ViewController: CoindeskAPIDelegate {
     }
     
     func realtimeDataFetchedSuccessfully() {
+        showError = false
         self.tableView.reloadData()
         self.scheduleRealtimePriceUpdate()
         self.resetNavigationTitle()
     }
     
     func realtimeDataFetchFailedWithError(error: Error) {
-        self.tableView.reloadData()
         showError = true
+        self.tableView.reloadData()
         errorMessage = error.localizedDescription
         self.resetNavigationTitle()
     }
     
     func historialDataFetchedSuccessfully() {
+        showError = false
         self.resetNavigationTitle()
         self.tableView.reloadData()
     }
     
     func historialDataFetchFailedWithError(error: Error) {
-        self.resetNavigationTitle()
         showError = true
+        self.resetNavigationTitle()
         errorMessage = error.localizedDescription
         self.tableView.reloadData()
     }
