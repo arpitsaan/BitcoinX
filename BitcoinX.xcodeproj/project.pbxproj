@@ -32,6 +32,20 @@
 		E89BD55A20A32DA300572932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BD55920A32DA300572932 /* Assets.xcassets */; };
 		E89BD55E20A32DA400572932 /* BitcoinXWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E89BD54420A32DA300572932 /* BitcoinXWatch.app */; };
 		E89BD56820A358C000572932 /* UIView+AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */; };
+		E8C8DA3B20A8A58000681EC3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3920A8A57F00681EC3 /* Disk.swift */; };
+		E8C8DA3C20A8A58000681EC3 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */; };
+		E8C8DA4720A8A5F700681EC3 /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3F20A8A5F600681EC3 /* Disk+Helpers.swift */; };
+		E8C8DA4820A8A5F700681EC3 /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4020A8A5F700681EC3 /* Disk+InternalHelpers.swift */; };
+		E8C8DA4920A8A5F700681EC3 /* Disk+[Data].swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4120A8A5F700681EC3 /* Disk+[Data].swift */; };
+		E8C8DA4B20A8A5F700681EC3 /* Disk+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4320A8A5F700681EC3 /* Disk+Data.swift */; };
+		E8C8DA4D20A8A5F700681EC3 /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4520A8A5F700681EC3 /* Disk+Errors.swift */; };
+		E8C8DA5720A8A76800681EC3 /* Disk+[Data].swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4120A8A5F700681EC3 /* Disk+[Data].swift */; };
+		E8C8DA5820A8A76800681EC3 /* Disk+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4320A8A5F700681EC3 /* Disk+Data.swift */; };
+		E8C8DA5920A8A76800681EC3 /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4520A8A5F700681EC3 /* Disk+Errors.swift */; };
+		E8C8DA5A20A8A76800681EC3 /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3F20A8A5F600681EC3 /* Disk+Helpers.swift */; };
+		E8C8DA5B20A8A76800681EC3 /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4020A8A5F700681EC3 /* Disk+InternalHelpers.swift */; };
+		E8C8DA5D20A8A76800681EC3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3920A8A57F00681EC3 /* Disk.swift */; };
+		E8C8DA5E20A8A76800681EC3 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +136,13 @@
 		E89BD55920A32DA300572932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E89BD55B20A32DA400572932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayoutHelper.swift"; sourceTree = "<group>"; };
+		E8C8DA3920A8A57F00681EC3 /* Disk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+Codable.swift"; sourceTree = "<group>"; };
+		E8C8DA3F20A8A5F600681EC3 /* Disk+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+Helpers.swift"; sourceTree = "<group>"; };
+		E8C8DA4020A8A5F700681EC3 /* Disk+InternalHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+InternalHelpers.swift"; sourceTree = "<group>"; };
+		E8C8DA4120A8A5F700681EC3 /* Disk+[Data].swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+[Data].swift"; sourceTree = "<group>"; };
+		E8C8DA4320A8A5F700681EC3 /* Disk+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+Data.swift"; sourceTree = "<group>"; };
+		E8C8DA4520A8A5F700681EC3 /* Disk+Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Disk+Errors.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +250,7 @@
 		E8348AF020A41A7700BD6F89 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E8C8DA3D20A8A5CE00681EC3 /* Disk */,
 				E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */,
 				E857A75C20A84880001801DD /* Double+Additions.swift */,
 				E857A76120A85C5A001801DD /* CommonHelpers.swift */,
@@ -286,6 +308,20 @@
 				E89BD55B20A32DA400572932 /* Info.plist */,
 			);
 			path = "BitcoinXWatch Extension";
+			sourceTree = "<group>";
+		};
+		E8C8DA3D20A8A5CE00681EC3 /* Disk */ = {
+			isa = PBXGroup;
+			children = (
+				E8C8DA4120A8A5F700681EC3 /* Disk+[Data].swift */,
+				E8C8DA4320A8A5F700681EC3 /* Disk+Data.swift */,
+				E8C8DA4520A8A5F700681EC3 /* Disk+Errors.swift */,
+				E8C8DA3F20A8A5F600681EC3 /* Disk+Helpers.swift */,
+				E8C8DA4020A8A5F700681EC3 /* Disk+InternalHelpers.swift */,
+				E8C8DA3920A8A57F00681EC3 /* Disk.swift */,
+				E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */,
+			);
+			path = Disk;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,13 +536,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C8DA4920A8A5F700681EC3 /* Disk+[Data].swift in Sources */,
 				E857A75520A7D93E001801DD /* CoindeskAPI.swift in Sources */,
 				E857A76020A85B1B001801DD /* RealtimeData.swift in Sources */,
 				E857A76220A85C5A001801DD /* CommonHelpers.swift in Sources */,
 				E89BD56820A358C000572932 /* UIView+AutoLayoutHelper.swift in Sources */,
 				E857A75D20A84880001801DD /* Double+Additions.swift in Sources */,
+				E8C8DA4820A8A5F700681EC3 /* Disk+InternalHelpers.swift in Sources */,
+				E8C8DA4D20A8A5F700681EC3 /* Disk+Errors.swift in Sources */,
+				E8C8DA3C20A8A58000681EC3 /* Disk+Codable.swift in Sources */,
 				E80E194E20A161370063C1AA /* ViewController.swift in Sources */,
+				E8C8DA4B20A8A5F700681EC3 /* Disk+Data.swift in Sources */,
+				E8C8DA3B20A8A58000681EC3 /* Disk.swift in Sources */,
 				E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */,
+				E8C8DA4720A8A5F700681EC3 /* Disk+Helpers.swift in Sources */,
 				E8348AF220A41E3E00BD6F89 /* HistoricalData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,11 +576,18 @@
 			files = (
 				E857A75B20A83125001801DD /* CoindeskAPI.swift in Sources */,
 				E89BD55820A32DA300572932 /* ExtensionDelegate.swift in Sources */,
+				E8C8DA5720A8A76800681EC3 /* Disk+[Data].swift in Sources */,
+				E8C8DA5920A8A76800681EC3 /* Disk+Errors.swift in Sources */,
 				E857A76420A86059001801DD /* RealtimeData.swift in Sources */,
+				E8C8DA5B20A8A76800681EC3 /* Disk+InternalHelpers.swift in Sources */,
+				E8C8DA5D20A8A76800681EC3 /* Disk.swift in Sources */,
 				E857A75E20A84985001801DD /* Double+Additions.swift in Sources */,
 				E89BD55620A32DA300572932 /* InterfaceController.swift in Sources */,
 				E857A75920A83035001801DD /* PriceRowController.swift in Sources */,
 				E8348AF320A45B7A00BD6F89 /* HistoricalData.swift in Sources */,
+				E8C8DA5820A8A76800681EC3 /* Disk+Data.swift in Sources */,
+				E8C8DA5A20A8A76800681EC3 /* Disk+Helpers.swift in Sources */,
+				E8C8DA5E20A8A76800681EC3 /* Disk+Codable.swift in Sources */,
 				E857A76320A85C60001801DD /* CommonHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

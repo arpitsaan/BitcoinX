@@ -47,7 +47,7 @@ class InterfaceController: WKInterfaceController {
             guard let controller = pricesTable.rowController(at: index) as? PriceRowController
                 else {
                     statusLabel.setHidden(false)
-                    self.statusLabel.setText("Something went wrong in displaying realtime price index.")
+                    self.statusLabel.setText("Something went wrong in displaying latest data.")
                     return
                 }
             
@@ -61,9 +61,11 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         self.pricesAPI.delegate = self
+        self.pricesAPI.loadCachedData()
         self.pricesAPI.fetchHistoricalData()
         self.pricesAPI.fetchRealtimeData()
-        statusLabel.setText("Fetching data...")
+        statusLabel.setHidden(false)
+        statusLabel.setText("Getting the latest exchange rate...")
     }
     
     func scheduleRealtimePriceUpdate() {
@@ -81,6 +83,10 @@ class InterfaceController: WKInterfaceController {
 }
 
 extension InterfaceController: CoindeskAPIDelegate {
+    func cachedDataLoadedSuccessfully() {
+        self.tableRefresh()
+    }
+    
     func realtimeDataFetchedSuccessfully() {
         statusLabel.setHidden(true)
         self.scheduleRealtimePriceUpdate()
@@ -89,7 +95,7 @@ extension InterfaceController: CoindeskAPIDelegate {
     
     func realtimeDataFetchFailedWithError(error: Error) {
         statusLabel.setHidden(false)
-        self.statusLabel.setText("Something went wrong in fetching realtime price data.")
+        self.statusLabel.setText(error.localizedDescription)
     }   
     
     func historialDataFetchedSuccessfully() {
@@ -99,21 +105,7 @@ extension InterfaceController: CoindeskAPIDelegate {
     
     func historialDataFetchFailedWithError(error: Error) {
         statusLabel.setHidden(false)
-        self.statusLabel.setText("Something went wrong in fetching historical prices.")
+        self.statusLabel.setText(error.localizedDescription)
     }
 }
 
-
-//use group user defaults
-//        NSUserDefaults *defaults = [[NSUserDefaults alloc]
-//            initWithSuiteName:@"group.com.calvium.watch.dev.defaults"];
-//
-//        //get the greeting
-//        NSString *greeting = [defaults objectForKey:@"greeting"];
-//
-//        //check if greeting isn't empty
-//        if (greeting) {
-//            NSLog(@"greeting = %@", greeting);
-//        } else{
-//            NSLog(@"no user defaults :(");
-//        }

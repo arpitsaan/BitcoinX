@@ -19,7 +19,7 @@
             <objects>
                 <controller identifier="WatchPricesController" title="BitcoinX" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitcoinXWatch" customModuleProvider="target">
                     <items>
-                        <label width="136" height="35" alignment="left" text="Label" id="HPF-dP-EjJ" userLabel="statusLabel">
+                        <label alignment="left" text="Label" numberOfLines="0" id="HPF-dP-EjJ" userLabel="statusLabel">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
                         </label>
                         <table alignment="left" id="uwl-by-NTZ">

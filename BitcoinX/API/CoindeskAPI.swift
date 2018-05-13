@@ -9,6 +9,8 @@
 import UIKit
 
 protocol CoindeskAPIDelegate: class {
+    func cachedDataLoadedSuccessfully()
+    
     func realtimeDataFetchedSuccessfully()
     func realtimeDataFetchFailedWithError(error: Error)
     
@@ -22,6 +24,15 @@ class CoindeskAPI: NSObject {
     var historicalData:HistoricalData?
     var realtimeData:RealtimeData?
     weak var delegate:CoindeskAPIDelegate?
+    
+    func loadCachedData() {
+        self.historicalData = CommonHelpers.getHistoricalDataFromDisk()
+        self.realtimeData = CommonHelpers.getRealtimeDataFromDisk()
+        
+        if self.historicalData != nil || self.realtimeData != nil {
+            self.delegate?.cachedDataLoadedSuccessfully()
+        }
+    }
     
     func isRealtimeDataAvailable() -> Bool {
         guard realtimeData != nil else {
@@ -55,6 +66,7 @@ class CoindeskAPI: NSObject {
                 //Get back to the main queue
                 DispatchQueue.main.async {
                     print(self.realtimeData!)
+                    CommonHelpers.saveRealtimeDataToDisk(data: self.realtimeData!)
                     self.delegate?.realtimeDataFetchedSuccessfully()
                 }
                 
@@ -81,6 +93,7 @@ class CoindeskAPI: NSObject {
                 //Get back to the main queue
                 DispatchQueue.main.async {
                     print(self.historicalData!)
+                    CommonHelpers.saveHistoricalDataToDisk(data: self.historicalData!)
                     self.delegate?.historialDataFetchedSuccessfully()
                 }
                 

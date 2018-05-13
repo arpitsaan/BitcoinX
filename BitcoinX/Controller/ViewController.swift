@@ -23,11 +23,12 @@ class ViewController: UIViewController {
         self.view.addSubview(tableView)
         tableView.fillSuperView()
         
-        getDataFromAPIService()
+        getData()
     }
     
-    func getDataFromAPIService() {
+    func getData() {
         self.coindeskApiObject.delegate = self
+        self.coindeskApiObject.loadCachedData()
         self.coindeskApiObject.fetchRealtimeData()
         self.coindeskApiObject.fetchHistoricalData()
     }
@@ -55,6 +56,10 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: CoindeskAPIDelegate {
+    func cachedDataLoadedSuccessfully() {
+        self.tableView.reloadData()
+    }
+    
     func realtimeDataFetchedSuccessfully() {
         self.tableView.reloadData()
         self.scheduleRealtimePriceUpdate()
