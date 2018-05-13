@@ -15,10 +15,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Bitcoin EUR for last 15 days"
+        navigationItem.title = "BitcoinX"
+        self.view.backgroundColor = UIColor.black
         
         tableView.dataSource = self
         tableView.allowsSelection = false
+        tableView.backgroundColor = UIColor.black
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
         
         self.view.addSubview(tableView)
         tableView.fillSuperView()
@@ -52,6 +55,10 @@ class ViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return false
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
 }
 
@@ -120,6 +127,10 @@ extension ViewController: UITableViewDataSource {
             cell?.textLabel?.text = realtimeValue.formatAsEuro()
             cell?.detailTextLabel?.text = self.coindeskApiObject.realtimeData?.time.updated
             
+            cell?.detailTextLabel?.textColor = UIColor.bxDarkTheme.gray
+            cell?.textLabel?.textColor = UIColor.bxDarkTheme.orange
+            cell?.backgroundColor = UIColor.black
+            
             return cell!
            
         case tableSection.historialPrices.rawValue:
@@ -138,6 +149,10 @@ extension ViewController: UITableViewDataSource {
             cell?.textLabel?.text = rate?.formatAsEuro()
             cell?.detailTextLabel?.text = date
             
+            cell?.detailTextLabel?.textColor = UIColor.bxDarkTheme.gray
+            cell?.textLabel?.textColor = UIColor.white
+            cell?.backgroundColor = UIColor.black
+            
             return cell!
             
         default:
@@ -145,7 +160,5 @@ extension ViewController: UITableViewDataSource {
         }
         
     }
-    
-    
 }
 
