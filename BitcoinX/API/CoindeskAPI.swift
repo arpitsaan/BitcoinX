@@ -85,7 +85,9 @@ class CoindeskAPI: NSObject {
        URLSession.shared.dataTask(with: getHistoricalAPIUrl()) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
-                self.delegate?.historialDataFetchFailedWithError(error: error!)
+                DispatchQueue.main.async {
+                    self.delegate?.historialDataFetchFailedWithError(error: error!)
+                }
             }
             
             guard let data = data else { return }
