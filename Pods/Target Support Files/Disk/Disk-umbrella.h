@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "Disk.h"
 
-FOUNDATION_EXPORT double AlamofireVersionNumber;
-FOUNDATION_EXPORT const unsigned char AlamofireVersionString[];
+FOUNDATION_EXPORT double DiskVersionNumber;
+FOUNDATION_EXPORT const unsigned char DiskVersionString[];
 

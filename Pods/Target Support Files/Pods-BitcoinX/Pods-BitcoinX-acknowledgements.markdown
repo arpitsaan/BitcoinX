@@ -1,9 +1,11 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## Alamofire
+## Disk
 
-Copyright (c) 2014-2016 Alamofire Software Foundation (http://alamofire.org/)
+The MIT License (MIT)
+
+Copyright (c) 2017 Saoud Rizwan <hello@saoudmr.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
