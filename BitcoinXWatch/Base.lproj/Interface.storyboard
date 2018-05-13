@@ -19,39 +19,53 @@
             <objects>
                 <controller identifier="WatchPricesController" title="BitcoinX Watch UI Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitcoinXWatch" customModuleProvider="target">
                     <items>
+                        <label width="136" height="35" alignment="left" text="Label" id="HPF-dP-EjJ" userLabel="statusLabel">
+                            <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                        </label>
                         <table alignment="left" id="uwl-by-NTZ">
                             <items>
-                                <tableRow identifier="WatchPricesRow" selectable="NO" id="B3Y-TO-0ZO">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" spacing="6" id="EFR-Za-ZWK">
+                                <tableRow identifier="BitcoinPriceRow" selectable="NO" id="B3Y-TO-0ZO" customClass="PriceRowController" customModule="BitcoinXWatch_Extension">
+                                    <group key="rootItem" width="1" height="38" alignment="left" spacing="6" id="EFR-Za-ZWK">
                                         <items>
-                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="bitcoin-logo" id="g4y-Qo-5F2">
-                                                <color key="tintColor" red="0.98039215686274506" green="0.62745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
                                             <separator height="1" heightAdjustment="-4" alignment="left" verticalAlignment="center" id="O5V-nW-APP">
                                                 <color key="color" red="0.98039215686274506" green="0.62745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </separator>
-                                            <group alignment="left" layout="vertical" spacing="0.0" id="KVV-AG-qU1">
+                                            <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="bitcoin-logo" id="g4y-Qo-5F2">
+                                                <color key="tintColor" red="0.98039215686274506" green="0.62745098039215685" blue="0.13725490196078433" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <group alignment="left" verticalAlignment="center" contentMode="center" layout="vertical" spacing="0.0" id="KVV-AG-qU1">
                                                 <items>
                                                     <label alignment="left" text="12-10-2012" id="LH8-tS-h52">
-                                                        <color key="textColor" white="0.77113172743055558" alpha="0.80340325342465757" colorSpace="calibratedWhite"/>
+                                                        <accessibilityTraits key="accessibilityTraits" staticText="YES" notEnabled="YES"/>
+                                                        <color key="textColor" red="0.53725490200000003" green="0.58431372550000005" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="font" name="AvenirNext-Bold" family="Avenir Next" pointSize="10"/>
                                                     </label>
                                                     <label alignment="left" text="9.53 EUR" id="xFC-0T-t9T">
-                                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="font" style="UICTFontTextStyleBody"/>
                                                     </label>
                                                 </items>
                                             </group>
                                         </items>
                                     </group>
+                                    <connections>
+                                        <outlet property="bitcoinLogoImage" destination="g4y-Qo-5F2" id="hsg-UZ-ap2"/>
+                                        <outlet property="dateLabel" destination="LH8-tS-h52" id="pxK-x8-ghX"/>
+                                        <outlet property="priceLabel" destination="xFC-0T-t9T" id="vzM-sV-fyl"/>
+                                        <outlet property="separator" destination="O5V-nW-APP" id="0QH-6Z-zgR"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>
                     </items>
                     <connections>
                         <outlet property="pricesTable" destination="uwl-by-NTZ" id="aQr-2a-G4k"/>
+                        <outlet property="statusLabel" destination="HPF-dP-EjJ" id="ekK-Kh-64g"/>
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="34" y="31"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.9998508095741272" green="0.63415282964706421" blue="0.13505613803863525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

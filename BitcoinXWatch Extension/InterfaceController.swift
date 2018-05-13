@@ -2,7 +2,7 @@
 //  InterfaceController.swift
 //  BitcoinXWatch Extension
 //
-//  Created by zom on 09/05/18.
+//  Created by Arpit Agarwal on 09/05/18.
 //  Copyright © 2018 acyooman. All rights reserved.
 //
 
@@ -11,15 +11,58 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    
     @IBOutlet var pricesTable: WKInterfaceTable!
     
+    @IBOutlet var statusLabel: WKInterfaceLabel!
     var priceList:CoindeskData?
+    var pricesAPI = CoindeskAPI.init()
+    
+    func tableRefresh(){
+        let rowCount = (self.pricesAPI.latestData?.bpi.count)!
+        
+        guard rowCount>0 else {
+             return
+        }
+        
+        pricesTable.setNumberOfRows(rowCount, withRowType: "BitcoinPriceRow")
+        
+        let keysArray = Array((self.pricesAPI.latestData?.bpi.keys)!).sorted(by: >)
+        
+        var index = 0
+        for dateString in keysArray {
+            guard let controller = pricesTable.rowController(at: index) as? PriceRowController else { continue }
+            let rate:Double = (self.pricesAPI.latestData?.bpi[dateString])!
+            controller.dateLabel.setText(dateString)
+            controller.priceLabel.setText(rate.formatAsEuro())
+            index += 1;
+        }
+    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-       
-        //use our group user defaults
+        self.pricesAPI.delegate = self
+        self.pricesAPI.fetchLatestData()
+        statusLabel.setText("Loading...")
+    }
+}
+
+extension InterfaceController: CoindeskAPIDelegate {
+    func historialDataFetchedSuccessfully() {
+        statusLabel.setHidden(true)
+        tableRefresh()
+    }
+    
+    func historialDataFetchFailedWithError(error: Error) {
+        statusLabel.setHidden(false)
+        self.statusLabel.setText("Something went wrong in fetching price index data.")
+    }
+    
+    
+}
+
+
+//use group user defaults
 //        NSUserDefaults *defaults = [[NSUserDefaults alloc]
 //            initWithSuiteName:@"group.com.calvium.watch.dev.defaults"];
 //
@@ -32,12 +75,3 @@ class InterfaceController: WKInterfaceController {
 //        } else{
 //            NSLog(@"no user defaults :(");
 //        }
-        
-        let defaults = UserDefaults.init(suiteName: "group.com.acyooman.BitcoinX")
-        self.priceList = defaults?.object(forKey: "priceData") as? CoindeskData
-
-        guard ((priceList?.bpi.count) != nil) else {
-            return
-        }; pricesTable.setNumberOfRows((priceList?.bpi.count)!, withRowType: "PriceRow")
-    }
-}

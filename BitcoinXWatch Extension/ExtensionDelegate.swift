@@ -2,7 +2,7 @@
 //  ExtensionDelegate.swift
 //  BitcoinXWatch Extension
 //
-//  Created by zom on 09/05/18.
+//  Created by Arpit Agarwal on 09/05/18.
 //  Copyright © 2018 acyooman. All rights reserved.
 //
 

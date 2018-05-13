@@ -64,9 +64,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "randomId")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRowIdentifier")
         if (cell == nil) {
-            cell = UITableViewCell.init(style: .value1, reuseIdentifier: "randomId")
+            cell = UITableViewCell.init(style: .value1, reuseIdentifier: "BitcoinXRowIdentifier")
         }
         
         let keysArray = Array((self.coindeskApiObject.latestData?.bpi.keys)!).sorted(by: >)
@@ -75,7 +75,7 @@ extension ViewController: UITableViewDataSource {
         let rate = self.coindeskApiObject.latestData?.bpi[keysArray[indexPath.row]]
         print(rate as Any)
         
-        cell?.textLabel?.text = String(format:"%f", rate!)
+        cell?.textLabel?.text = rate?.formatAsEuro()
         cell?.detailTextLabel?.text = date
 
         return cell!

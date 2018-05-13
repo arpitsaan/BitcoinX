@@ -16,6 +16,10 @@
 		E8348AF220A41E3E00BD6F89 /* CoindeskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */; };
 		E8348AF320A45B7A00BD6F89 /* CoindeskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */; };
 		E857A75520A7D93E001801DD /* CoindeskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75420A7D93E001801DD /* CoindeskAPI.swift */; };
+		E857A75920A83035001801DD /* PriceRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75820A83035001801DD /* PriceRowController.swift */; };
+		E857A75B20A83125001801DD /* CoindeskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75420A7D93E001801DD /* CoindeskAPI.swift */; };
+		E857A75D20A84880001801DD /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75C20A84880001801DD /* Double+Additions.swift */; };
+		E857A75E20A84985001801DD /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75C20A84880001801DD /* Double+Additions.swift */; };
 		E89BD54820A32DA300572932 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89BD54620A32DA300572932 /* Interface.storyboard */; };
 		E89BD54A20A32DA300572932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BD54920A32DA300572932 /* Assets.xcassets */; };
 		E89BD55120A32DA300572932 /* BitcoinXWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E89BD55020A32DA300572932 /* BitcoinXWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -102,6 +106,8 @@
 		E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskData.swift; sourceTree = "<group>"; };
 		E8348B1420A4987C00BD6F89 /* BitcoinX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitcoinX.entitlements; sourceTree = "<group>"; };
 		E857A75420A7D93E001801DD /* CoindeskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskAPI.swift; sourceTree = "<group>"; };
+		E857A75820A83035001801DD /* PriceRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRowController.swift; sourceTree = "<group>"; };
+		E857A75C20A84880001801DD /* Double+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Additions.swift"; sourceTree = "<group>"; };
 		E89BD54420A32DA300572932 /* BitcoinXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89BD54720A32DA300572932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E89BD54920A32DA300572932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -232,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */,
+				E857A75C20A84880001801DD /* Double+Additions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -278,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				E89BD55520A32DA300572932 /* InterfaceController.swift */,
+				E857A75820A83035001801DD /* PriceRowController.swift */,
 				E89BD55720A32DA300572932 /* ExtensionDelegate.swift */,
 				E89BD55920A32DA300572932 /* Assets.xcassets */,
 				E89BD55B20A32DA400572932 /* Info.plist */,
@@ -539,6 +547,7 @@
 			files = (
 				E857A75520A7D93E001801DD /* CoindeskAPI.swift in Sources */,
 				E89BD56820A358C000572932 /* UIView+AutoLayoutHelper.swift in Sources */,
+				E857A75D20A84880001801DD /* Double+Additions.swift in Sources */,
 				E80E194E20A161370063C1AA /* ViewController.swift in Sources */,
 				E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */,
 				E8348AF220A41E3E00BD6F89 /* CoindeskData.swift in Sources */,
@@ -565,8 +574,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E857A75B20A83125001801DD /* CoindeskAPI.swift in Sources */,
 				E89BD55820A32DA300572932 /* ExtensionDelegate.swift in Sources */,
+				E857A75E20A84985001801DD /* Double+Additions.swift in Sources */,
 				E89BD55620A32DA300572932 /* InterfaceController.swift in Sources */,
+				E857A75920A83035001801DD /* PriceRowController.swift in Sources */,
 				E8348AF320A45B7A00BD6F89 /* CoindeskData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
