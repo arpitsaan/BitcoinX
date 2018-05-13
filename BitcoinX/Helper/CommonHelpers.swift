@@ -8,3 +8,11 @@
 
 import Foundation
 
+class CommonHelpers: NSObject {
+
+    public static func getGroupUrlString() -> String {
+        return "group.com.acyooman.BitcoinX"
+    }
+    
+    
+}

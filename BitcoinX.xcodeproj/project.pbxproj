@@ -114,6 +114,8 @@
 		E857A75C20A84880001801DD /* Double+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Additions.swift"; sourceTree = "<group>"; };
 		E857A75F20A85B1B001801DD /* RealtimeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealtimeData.swift; sourceTree = "<group>"; };
 		E857A76120A85C5A001801DD /* CommonHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonHelpers.swift; sourceTree = "<group>"; };
+		E857A76520A872DC001801DD /* BitcoinXWatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitcoinXWatch.entitlements; sourceTree = "<group>"; };
+		E857A76620A872EB001801DD /* BitcoinXWatch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BitcoinXWatch Extension.entitlements"; sourceTree = "<group>"; };
 		E89BD54420A32DA300572932 /* BitcoinXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89BD54720A32DA300572932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E89BD54920A32DA300572932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 		E89BD54520A32DA300572932 /* BitcoinXWatch */ = {
 			isa = PBXGroup;
 			children = (
+				E857A76520A872DC001801DD /* BitcoinXWatch.entitlements */,
 				E89BD54620A32DA300572932 /* Interface.storyboard */,
 				E89BD54920A32DA300572932 /* Assets.xcassets */,
 				E89BD54B20A32DA300572932 /* Info.plist */,
@@ -292,6 +295,7 @@
 		E89BD55420A32DA300572932 /* BitcoinXWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E857A76620A872EB001801DD /* BitcoinXWatch Extension.entitlements */,
 				E89BD55520A32DA300572932 /* InterfaceController.swift */,
 				E857A75820A83035001801DD /* PriceRowController.swift */,
 				E89BD55720A32DA300572932 /* ExtensionDelegate.swift */,
@@ -411,7 +415,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -428,10 +432,20 @@
 					E89BD54320A32DA300572932 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					E89BD54F20A32DA300572932 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -752,8 +766,9 @@
 			baseConfigurationReference = 80BA0A51F57C0E4364C6C244 /* Pods-BitcoinX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitcoinX/Core/BitcoinX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				INFOPLIST_FILE = "$(SRCROOT)/BitcoinX/Core/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -769,8 +784,9 @@
 			baseConfigurationReference = DEA81786F60EDB6F909C1687 /* Pods-BitcoinX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitcoinX/Core/BitcoinX.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				INFOPLIST_FILE = "$(SRCROOT)/BitcoinX/Core/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -852,8 +868,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitcoinXWatch/BitcoinXWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				IBSC_MODULE = BitcoinXWatch_Extension;
 				INFOPLIST_FILE = BitcoinXWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX.watchkitapp;
@@ -871,8 +888,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BitcoinXWatch/BitcoinXWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				IBSC_MODULE = BitcoinXWatch_Extension;
 				INFOPLIST_FILE = BitcoinXWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX.watchkitapp;
@@ -889,8 +907,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BitcoinXWatch Extension/BitcoinXWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				INFOPLIST_FILE = "BitcoinXWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX.watchkitapp.watchkitextension;
@@ -907,8 +926,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "BitcoinXWatch Extension/BitcoinXWatch Extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				DEVELOPMENT_TEAM = L2VF9Y9HZL;
 				INFOPLIST_FILE = "BitcoinXWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX.watchkitapp.watchkitextension;

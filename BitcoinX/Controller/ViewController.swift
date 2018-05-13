@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         getDataFromAPIService()
     }
     
+    func getDataFromAPIService() {
+        self.coindeskApiObject.delegate = self
+        self.coindeskApiObject.fetchRealtimeData()
+        self.coindeskApiObject.fetchHistoricalData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,12 +49,6 @@ extension ViewController: CoindeskAPIDelegate {
     
     func realtimeDataFetchFailedWithError(error: Error) {
         self.tableView.reloadData()
-    }
-    
-    func getDataFromAPIService() {
-        self.coindeskApiObject.delegate = self
-        self.coindeskApiObject.fetchRealtimeData()
-        self.coindeskApiObject.fetchHistoricalData()
     }
     
     func historialDataFetchFailedWithError(error: Error) {
