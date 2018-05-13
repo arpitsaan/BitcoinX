@@ -10,7 +10,7 @@
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
-            <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -35,10 +35,10 @@
                                             </imageView>
                                             <group alignment="left" verticalAlignment="center" contentMode="center" layout="vertical" spacing="0.0" id="KVV-AG-qU1">
                                                 <items>
-                                                    <label alignment="left" text="12-10-2012" id="LH8-tS-h52">
+                                                    <label alignment="left" text="12-10-2012" minimumScaleFactor="0.69999999999999996" id="LH8-tS-h52">
                                                         <accessibilityTraits key="accessibilityTraits" staticText="YES" notEnabled="YES"/>
                                                         <color key="textColor" red="0.53725490200000003" green="0.58431372550000005" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <fontDescription key="font" name="AvenirNext-Bold" family="Avenir Next" pointSize="10"/>
+                                                        <fontDescription key="font" name="AvenirNext-Medium" family="Avenir Next" pointSize="10"/>
                                                     </label>
                                                     <label alignment="left" text="9.53 EUR" id="xFC-0T-t9T">
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

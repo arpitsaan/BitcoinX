@@ -18,6 +18,7 @@ protocol CoindeskAPIDelegate: class {
 
 class CoindeskAPI: NSObject {
     private var currencyCode = "EUR"
+    
     var historicalData:HistoricalData?
     var realtimeData:RealtimeData?
     weak var delegate:CoindeskAPIDelegate?

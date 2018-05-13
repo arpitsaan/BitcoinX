@@ -19,19 +19,38 @@ class InterfaceController: WKInterfaceController {
     var pricesAPI = CoindeskAPI.init()
     
     func tableRefresh(){
-        let rowCount = (self.pricesAPI.historicalData?.bpi.count)!
-        
+        var rowCount = self.pricesAPI.getHistoricalDataRowsCount()
+        rowCount += self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
+
         guard rowCount>0 else {
              return
         }
         
         pricesTable.setNumberOfRows(rowCount, withRowType: "BitcoinPriceRow")
         
+        //realtime price row
+        if self.pricesAPI.isRealtimeDataAvailable() {
+            guard let controller = pricesTable.rowController(at: 0) as? PriceRowController else { return }
+            
+            let rate:Double = (self.pricesAPI.realtimeData?.bpi.eur.rateFloat)!
+            controller.dateLabel.setText(self.pricesAPI.realtimeData?.time.updated)
+            controller.priceLabel.setText(rate.formatAsEuro())
+        }
+        
+        //historial prices
+        guard self.pricesAPI.historicalData != nil else {return}
+        
         let keysArray = Array((self.pricesAPI.historicalData?.bpi.keys)!).sorted(by: >)
         
-        var index = 0
+        var index = self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
         for dateString in keysArray {
-            guard let controller = pricesTable.rowController(at: index) as? PriceRowController else { continue }
+            guard let controller = pricesTable.rowController(at: index) as? PriceRowController
+                else {
+                    statusLabel.setHidden(false)
+                    self.statusLabel.setText("Something went wrong in displaying realtime price index.")
+                    return
+                }
+            
             let rate:Double = (self.pricesAPI.historicalData?.bpi[dateString])!
             controller.dateLabel.setText(dateString)
             controller.priceLabel.setText(rate.formatAsEuro())
@@ -43,7 +62,8 @@ class InterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         self.pricesAPI.delegate = self
         self.pricesAPI.fetchHistoricalData()
-        statusLabel.setText("Loading...")
+        self.pricesAPI.fetchRealtimeData()
+        statusLabel.setText("Fetching data...")
     }
 }
 
@@ -55,7 +75,7 @@ extension InterfaceController: CoindeskAPIDelegate {
     
     func realtimeDataFetchFailedWithError(error: Error) {
         statusLabel.setHidden(false)
-        self.statusLabel.setText("Something went wrong in fetching price index data.")
+        self.statusLabel.setText("Something went wrong in fetching realtime price data.")
     }   
     
     func historialDataFetchedSuccessfully() {
@@ -65,7 +85,7 @@ extension InterfaceController: CoindeskAPIDelegate {
     
     func historialDataFetchFailedWithError(error: Error) {
         statusLabel.setHidden(false)
-        self.statusLabel.setText("Something went wrong in fetching price index data.")
+        self.statusLabel.setText("Something went wrong in fetching historical prices.")
     }
 }
 
