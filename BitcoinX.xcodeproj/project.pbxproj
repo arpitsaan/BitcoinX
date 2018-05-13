@@ -32,7 +32,6 @@
 		E89BD55A20A32DA300572932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BD55920A32DA300572932 /* Assets.xcassets */; };
 		E89BD55E20A32DA400572932 /* BitcoinXWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = E89BD54420A32DA300572932 /* BitcoinXWatch.app */; };
 		E89BD56820A358C000572932 /* UIView+AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */; };
-		F328D6995F39A12B05A3B2FB /* Pods_BitcoinX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA24FE1A193DC4AAC2ACC8D /* Pods_BitcoinX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,9 +91,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1CA24FE1A193DC4AAC2ACC8D /* Pods_BitcoinX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitcoinX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		80BA0A51F57C0E4364C6C244 /* Pods-BitcoinX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinX/Pods-BitcoinX.debug.xcconfig"; sourceTree = "<group>"; };
-		DEA81786F60EDB6F909C1687 /* Pods-BitcoinX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitcoinX.release.xcconfig"; path = "Pods/Target Support Files/Pods-BitcoinX/Pods-BitcoinX.release.xcconfig"; sourceTree = "<group>"; };
 		E80E194820A161370063C1AA /* BitcoinX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E194B20A161370063C1AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E80E194D20A161370063C1AA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -140,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F328D6995F39A12B05A3B2FB /* Pods_BitcoinX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,23 +163,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		003685F50B850A290DBC3367 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				80BA0A51F57C0E4364C6C244 /* Pods-BitcoinX.debug.xcconfig */,
-				DEA81786F60EDB6F909C1687 /* Pods-BitcoinX.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3B6EDD01B33BDC7E3233DD92 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1CA24FE1A193DC4AAC2ACC8D /* Pods_BitcoinX.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		E80E193F20A161370063C1AA = {
 			isa = PBXGroup;
 			children = (
@@ -194,8 +172,6 @@
 				E89BD54520A32DA300572932 /* BitcoinXWatch */,
 				E89BD55420A32DA300572932 /* BitcoinXWatch Extension */,
 				E80E194920A161370063C1AA /* Products */,
-				003685F50B850A290DBC3367 /* Pods */,
-				3B6EDD01B33BDC7E3233DD92 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -319,12 +295,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E80E197020A161370063C1AA /* Build configuration list for PBXNativeTarget "BitcoinX" */;
 			buildPhases = (
-				2CAE88F2B117CC9B90490865 /* [CP] Check Pods Manifest.lock */,
 				E80E194420A161370063C1AA /* Sources */,
 				E80E194520A161370063C1AA /* Frameworks */,
 				E80E194620A161370063C1AA /* Resources */,
-				77BD6E2964FF7552FB833EC4 /* [CP] Embed Pods Frameworks */,
-				ED570CDB93AAA0243A7699B0 /* [CP] Copy Pods Resources */,
 				E89BD56620A32DA400572932 /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -521,54 +494,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2CAE88F2B117CC9B90490865 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		77BD6E2964FF7552FB833EC4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitcoinX/Pods-BitcoinX-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ED570CDB93AAA0243A7699B0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BitcoinX/Pods-BitcoinX-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E80E194420A161370063C1AA /* Sources */ = {
@@ -771,7 +696,6 @@
 		};
 		E80E197120A161370063C1AA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80BA0A51F57C0E4364C6C244 /* Pods-BitcoinX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BitcoinX/Core/BitcoinX.entitlements;
@@ -789,7 +713,6 @@
 		};
 		E80E197220A161370063C1AA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEA81786F60EDB6F909C1687 /* Pods-BitcoinX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = BitcoinX/Core/BitcoinX.entitlements;

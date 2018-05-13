@@ -1,6 +1,0 @@
-framework module Pods_BitcoinX {
-  umbrella header "Pods-BitcoinX-umbrella.h"
-
-  export *
-  module * { export * }
-}
