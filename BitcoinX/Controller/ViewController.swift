@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     var coindeskApiObject = CoindeskAPI.init()
     var tableView:UITableView = UITableView()
+    var showError = false
+    var errorMessage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,15 +36,21 @@ class ViewController: UIViewController {
         self.coindeskApiObject.loadCachedData()
         self.coindeskApiObject.fetchRealtimeData()
         self.coindeskApiObject.fetchHistoricalData()
+        navigationItem.title = "Updating..."
     }
     
     @objc func makeRealtimePriceRequest() {
         self.coindeskApiObject.fetchRealtimeData()
+        navigationItem.title = "Updating..."
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func resetNavigationTitle() {
+        navigationItem.title = "BitcoinX"
     }
     
     func scheduleRealtimePriceUpdate() {
@@ -70,17 +78,25 @@ extension ViewController: CoindeskAPIDelegate {
     func realtimeDataFetchedSuccessfully() {
         self.tableView.reloadData()
         self.scheduleRealtimePriceUpdate()
+        self.resetNavigationTitle()
     }
     
     func realtimeDataFetchFailedWithError(error: Error) {
         self.tableView.reloadData()
-    }
-    
-    func historialDataFetchFailedWithError(error: Error) {
-        self.tableView.reloadData()
+        showError = true
+        errorMessage = error.localizedDescription
+        self.resetNavigationTitle()
     }
     
     func historialDataFetchedSuccessfully() {
+        self.resetNavigationTitle()
+        self.tableView.reloadData()
+    }
+    
+    func historialDataFetchFailedWithError(error: Error) {
+        self.resetNavigationTitle()
+        showError = true
+        errorMessage = error.localizedDescription
         self.tableView.reloadData()
     }
 }
@@ -88,7 +104,7 @@ extension ViewController: CoindeskAPIDelegate {
 extension ViewController: UITableViewDataSource {
     
     enum tableSection:Int {
-        case loader = 0
+        case errorMessage = 0
         case realtimePrice
         case historialPrices
         case sectionCount
@@ -100,7 +116,11 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case tableSection.loader.rawValue:
+        case tableSection.errorMessage.rawValue:
+            if showError {
+                return 1
+            }
+            
             return 0
             
         case tableSection.realtimePrice.rawValue:
@@ -116,6 +136,18 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
+        
+        case tableSection.errorMessage.rawValue:
+            var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXErrorRowIdentifier")
+            
+            if (cell == nil) {
+                cell = UITableViewCell.init(style: .default, reuseIdentifier: "BitcoinXErrorRowIdentifier")
+            }
+            cell?.textLabel?.text = self.errorMessage
+            cell?.textLabel?.textColor =  UIColor.white
+            cell?.backgroundColor = UIColor.bxDarkTheme.darkBg
+            
+            return cell!
             
         case tableSection.realtimePrice.rawValue:
             var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRealtimeRowIdentifier")

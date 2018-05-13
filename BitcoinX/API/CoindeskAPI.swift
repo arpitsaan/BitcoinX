@@ -55,7 +55,10 @@ class CoindeskAPI: NSObject {
         URLSession.shared.dataTask(with: getRealtimeAPIUrl()) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
-                self.delegate?.realtimeDataFetchFailedWithError(error: error!)
+                
+                DispatchQueue.main.async {
+                    self.delegate?.realtimeDataFetchFailedWithError(error: error!)
+                }
             }
             
             guard let data = data else { return }
