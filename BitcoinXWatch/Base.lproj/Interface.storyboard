@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--BitcoinX Watch UI Controller-->
+        <!--BitcoinX-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="WatchPricesController" title="BitcoinX Watch UI Controller" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitcoinXWatch" customModuleProvider="target">
+                <controller identifier="WatchPricesController" title="BitcoinX" fullScreen="YES" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="BitcoinXWatch" customModuleProvider="target">
                     <items>
                         <label width="136" height="35" alignment="left" text="Label" id="HPF-dP-EjJ" userLabel="statusLabel">
                             <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
