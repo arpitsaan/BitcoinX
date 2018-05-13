@@ -65,11 +65,25 @@ class InterfaceController: WKInterfaceController {
         self.pricesAPI.fetchRealtimeData()
         statusLabel.setText("Fetching data...")
     }
+    
+    func scheduleRealtimePriceUpdate() {
+        //schedule next realtime price update
+        Timer.scheduledTimer(timeInterval: CommonHelpers.getRealtimeUpdateInterval(),
+                             target: self,
+                             selector: #selector(self.makeRealtimePriceRequest),
+                             userInfo: nil, repeats: false)
+    }
+    
+    
+    @objc func makeRealtimePriceRequest() {
+        self.pricesAPI.fetchRealtimeData()
+    }
 }
 
 extension InterfaceController: CoindeskAPIDelegate {
     func realtimeDataFetchedSuccessfully() {
         statusLabel.setHidden(true)
+        self.scheduleRealtimePriceUpdate()
         tableRefresh()
     }
     

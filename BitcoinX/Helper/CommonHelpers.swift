@@ -10,6 +10,10 @@ import Foundation
 
 class CommonHelpers: NSObject {
 
+    public static func getRealtimeUpdateInterval() -> TimeInterval {
+        return 60
+    }
+    
     public static func getGroupUrlString() -> String {
         return "group.com.acyooman.BitcoinX"
     }

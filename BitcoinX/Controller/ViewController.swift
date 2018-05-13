@@ -32,9 +32,21 @@ class ViewController: UIViewController {
         self.coindeskApiObject.fetchHistoricalData()
     }
     
+    @objc func makeRealtimePriceRequest() {
+        self.coindeskApiObject.fetchRealtimeData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func scheduleRealtimePriceUpdate() {
+        //schedule next realtime price update
+        Timer.scheduledTimer(timeInterval: CommonHelpers.getRealtimeUpdateInterval(),
+                             target: self,
+                             selector: #selector(self.makeRealtimePriceRequest),
+                             userInfo: nil, repeats: false)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -45,6 +57,7 @@ class ViewController: UIViewController {
 extension ViewController: CoindeskAPIDelegate {
     func realtimeDataFetchedSuccessfully() {
         self.tableView.reloadData()
+        self.scheduleRealtimePriceUpdate()
     }
     
     func realtimeDataFetchFailedWithError(error: Error) {
