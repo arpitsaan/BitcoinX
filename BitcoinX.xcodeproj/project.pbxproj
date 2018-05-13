@@ -14,8 +14,9 @@
 		E80E195620A161370063C1AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E80E195420A161370063C1AA /* LaunchScreen.storyboard */; };
 		E80E196120A161370063C1AA /* BitcoinXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E196020A161370063C1AA /* BitcoinXTests.swift */; };
 		E80E196C20A161370063C1AA /* BitcoinXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E80E196B20A161370063C1AA /* BitcoinXUITests.swift */; };
-		E8348AF220A41E3E00BD6F89 /* CoinbaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoinbaseData.swift */; };
-		E8348AF320A45B7A00BD6F89 /* CoinbaseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoinbaseData.swift */; };
+		E8348AF220A41E3E00BD6F89 /* CoindeskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */; };
+		E8348AF320A45B7A00BD6F89 /* CoindeskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */; };
+		E857A75520A7D93E001801DD /* CoindeskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75420A7D93E001801DD /* CoindeskAPI.swift */; };
 		E89BD54820A32DA300572932 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E89BD54620A32DA300572932 /* Interface.storyboard */; };
 		E89BD54A20A32DA300572932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E89BD54920A32DA300572932 /* Assets.xcassets */; };
 		E89BD55120A32DA300572932 /* BitcoinXWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E89BD55020A32DA300572932 /* BitcoinXWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -100,7 +101,9 @@
 		E80E196720A161370063C1AA /* BitcoinXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitcoinXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E80E196B20A161370063C1AA /* BitcoinXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinXUITests.swift; sourceTree = "<group>"; };
 		E80E196D20A161370063C1AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E8348AF120A41E3E00BD6F89 /* CoinbaseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinbaseData.swift; sourceTree = "<group>"; };
+		E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskData.swift; sourceTree = "<group>"; };
+		E8348B1420A4987C00BD6F89 /* BitcoinX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BitcoinX.entitlements; sourceTree = "<group>"; };
+		E857A75420A7D93E001801DD /* CoindeskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoindeskAPI.swift; sourceTree = "<group>"; };
 		E89BD54420A32DA300572932 /* BitcoinXWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitcoinXWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89BD54720A32DA300572932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		E89BD54920A32DA300572932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -192,14 +195,11 @@
 		E80E194A20A161370063C1AA /* BitcoinX */ = {
 			isa = PBXGroup;
 			children = (
-				E8348AF020A41A7700BD6F89 /* Helpers */,
+				E857A75120A7CDB1001801DD /* API */,
+				E857A75020A7CD52001801DD /* Controller */,
+				E857A74F20A7CD2F001801DD /* Core */,
+				E8348AF020A41A7700BD6F89 /* Helper */,
 				E8348AEF20A41A6F00BD6F89 /* Model */,
-				E80E194B20A161370063C1AA /* AppDelegate.swift */,
-				E80E194D20A161370063C1AA /* ViewController.swift */,
-				E80E194F20A161370063C1AA /* Main.storyboard */,
-				E80E195220A161370063C1AA /* Assets.xcassets */,
-				E80E195420A161370063C1AA /* LaunchScreen.storyboard */,
-				E80E195720A161370063C1AA /* Info.plist */,
 			);
 			path = BitcoinX;
 			sourceTree = "<group>";
@@ -225,17 +225,46 @@
 		E8348AEF20A41A6F00BD6F89 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E8348AF120A41E3E00BD6F89 /* CoinbaseData.swift */,
+				E8348AF120A41E3E00BD6F89 /* CoindeskData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		E8348AF020A41A7700BD6F89 /* Helpers */ = {
+		E8348AF020A41A7700BD6F89 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */,
 			);
-			path = Helpers;
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E857A74F20A7CD2F001801DD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E80E194F20A161370063C1AA /* Main.storyboard */,
+				E80E195220A161370063C1AA /* Assets.xcassets */,
+				E80E195420A161370063C1AA /* LaunchScreen.storyboard */,
+				E80E195720A161370063C1AA /* Info.plist */,
+				E8348B1420A4987C00BD6F89 /* BitcoinX.entitlements */,
+				E80E194B20A161370063C1AA /* AppDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E857A75020A7CD52001801DD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E80E194D20A161370063C1AA /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E857A75120A7CDB1001801DD /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E857A75420A7D93E001801DD /* CoindeskAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		E89BD54520A32DA300572932 /* BitcoinXWatch */ = {
@@ -367,6 +396,11 @@
 					E80E194720A161370063C1AA = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					E80E195B20A161370063C1AA = {
 						CreatedOnToolsVersion = 9.2;
@@ -507,10 +541,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E857A75520A7D93E001801DD /* CoindeskAPI.swift in Sources */,
 				E89BD56820A358C000572932 /* UIView+AutoLayoutHelper.swift in Sources */,
 				E80E194E20A161370063C1AA /* ViewController.swift in Sources */,
 				E80E194C20A161370063C1AA /* AppDelegate.swift in Sources */,
-				E8348AF220A41E3E00BD6F89 /* CoinbaseData.swift in Sources */,
+				E8348AF220A41E3E00BD6F89 /* CoindeskData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,7 +571,7 @@
 			files = (
 				E89BD55820A32DA300572932 /* ExtensionDelegate.swift in Sources */,
 				E89BD55620A32DA300572932 /* InterfaceController.swift in Sources */,
-				E8348AF320A45B7A00BD6F89 /* CoinbaseData.swift in Sources */,
+				E8348AF320A45B7A00BD6F89 /* CoindeskData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,8 +741,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2VF9Y9HZL;
-				INFOPLIST_FILE = BitcoinX/Info.plist;
+				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				INFOPLIST_FILE = "$(SRCROOT)/BitcoinX/Core/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX;
@@ -723,8 +758,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2VF9Y9HZL;
-				INFOPLIST_FILE = BitcoinX/Info.plist;
+				DEVELOPMENT_TEAM = 4Q6RKAKAZV;
+				INFOPLIST_FILE = "$(SRCROOT)/BitcoinX/Core/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acyooman.BitcoinX;

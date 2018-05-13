@@ -47,6 +47,9 @@
                             </items>
                         </table>
                     </items>
+                    <connections>
+                        <outlet property="pricesTable" destination="uwl-by-NTZ" id="aQr-2a-G4k"/>
+                    </connections>
                 </controller>
             </objects>
         </scene>

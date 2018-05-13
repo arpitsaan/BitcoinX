@@ -1,5 +1,5 @@
 //
-//  CoinbaseData.swift
+//  CoindeskData.swift
 //  BitcoinX
 //
 //  Created by Arpit Agarwal on 10/05/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct CoinbaseData: Codable {
+struct CoindeskData: Codable {
     let bpi: [String: Double]
     let disclaimer: String
     let time: Time
