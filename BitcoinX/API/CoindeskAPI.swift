@@ -164,3 +164,26 @@ extension CoindeskAPI {
         return URL.init(string: realtimeUrl)!
     }
 }
+
+
+//-----------
+//FIXME: Upgrade to use the dependency injection design @arpit
+/*
+ Sample ->
+ 
+     class HttpClient {
+         typealias completeClosure = ( _ data: Data?, _ error: Error?)->Void
+         private let session: URLSession
+         init(session: URLSessionProtocol) {
+         self.session = session
+     }
+     func get( url: URL, callback: @escaping completeClosure ) {
+             let request = NSMutableURLRequest(url: url)
+             request.httpMethod = "GET"
+             let task = session.dataTask(with: request) { (data, response, error) in
+             callback(data, error)
+         }
+            task.resume()
+         }
+     }
+ */
