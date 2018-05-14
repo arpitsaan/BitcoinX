@@ -48,6 +48,20 @@
 		E8C8DA5E20A8A76800681EC3 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */; };
 		E8C8DA6020A8B42100681EC3 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA5F20A8B42100681EC3 /* UIColor+Additions.swift */; };
 		E8C8DA6120A8BC8C00681EC3 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA5F20A8B42100681EC3 /* UIColor+Additions.swift */; };
+		E8C8DA6220A935A800681EC3 /* CoindeskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75420A7D93E001801DD /* CoindeskAPI.swift */; };
+		E8C8DA6320A935B900681EC3 /* HistoricalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8348AF120A41E3E00BD6F89 /* HistoricalData.swift */; };
+		E8C8DA6420A935BF00681EC3 /* RealtimeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75F20A85B1B001801DD /* RealtimeData.swift */; };
+		E8C8DA6D20A9366000681EC3 /* Disk+[Data].swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4120A8A5F700681EC3 /* Disk+[Data].swift */; };
+		E8C8DA6E20A9366000681EC3 /* Disk+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4320A8A5F700681EC3 /* Disk+Data.swift */; };
+		E8C8DA6F20A9366000681EC3 /* Disk+Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4520A8A5F700681EC3 /* Disk+Errors.swift */; };
+		E8C8DA7020A9366000681EC3 /* Disk+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3F20A8A5F600681EC3 /* Disk+Helpers.swift */; };
+		E8C8DA7120A9366000681EC3 /* Disk+InternalHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA4020A8A5F700681EC3 /* Disk+InternalHelpers.swift */; };
+		E8C8DA7220A9366000681EC3 /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3920A8A57F00681EC3 /* Disk.swift */; };
+		E8C8DA7320A9366000681EC3 /* Disk+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA3A20A8A57F00681EC3 /* Disk+Codable.swift */; };
+		E8C8DA7720A9366700681EC3 /* UIView+AutoLayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89BD56720A358C000572932 /* UIView+AutoLayoutHelper.swift */; };
+		E8C8DA7820A9366700681EC3 /* Double+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A75C20A84880001801DD /* Double+Additions.swift */; };
+		E8C8DA7920A9366700681EC3 /* CommonHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E857A76120A85C5A001801DD /* CommonHelpers.swift */; };
+		E8C8DA7A20A9366700681EC3 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8C8DA5F20A8B42100681EC3 /* UIColor+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -563,7 +577,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8C8DA6220A935A800681EC3 /* CoindeskAPI.swift in Sources */,
+				E8C8DA7820A9366700681EC3 /* Double+Additions.swift in Sources */,
+				E8C8DA7320A9366000681EC3 /* Disk+Codable.swift in Sources */,
+				E8C8DA7120A9366000681EC3 /* Disk+InternalHelpers.swift in Sources */,
+				E8C8DA7720A9366700681EC3 /* UIView+AutoLayoutHelper.swift in Sources */,
+				E8C8DA6E20A9366000681EC3 /* Disk+Data.swift in Sources */,
+				E8C8DA7920A9366700681EC3 /* CommonHelpers.swift in Sources */,
+				E8C8DA6320A935B900681EC3 /* HistoricalData.swift in Sources */,
+				E8C8DA6D20A9366000681EC3 /* Disk+[Data].swift in Sources */,
+				E8C8DA7220A9366000681EC3 /* Disk.swift in Sources */,
+				E8C8DA7020A9366000681EC3 /* Disk+Helpers.swift in Sources */,
+				E8C8DA7A20A9366700681EC3 /* UIColor+Additions.swift in Sources */,
+				E8C8DA6420A935BF00681EC3 /* RealtimeData.swift in Sources */,
 				E80E196120A161370063C1AA /* BitcoinXTests.swift in Sources */,
+				E8C8DA6F20A9366000681EC3 /* Disk+Errors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

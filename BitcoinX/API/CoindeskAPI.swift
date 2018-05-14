@@ -125,7 +125,7 @@ class CoindeskAPI: NSObject {
 //--------------------------
 extension CoindeskAPI {
     
-    private func getStartDateString() -> String {
+    func getStartDateString() -> String {
         //date for 2 weeks earlier
         let startDate = Calendar.current.date(byAdding: .weekOfYear, value: -2, to: Date())!
         let dateFormatter = DateFormatter()
@@ -134,7 +134,7 @@ extension CoindeskAPI {
         return startDateString
     }
     
-    private func getCurrentDateString() -> String {
+    func getCurrentDateString() -> String {
         //today's date
         let todaysDate = Date()
         let dateFormatter = DateFormatter()
@@ -143,7 +143,7 @@ extension CoindeskAPI {
         return todaysDateString
     }
     
-    private func getHistoricalAPIUrl(startDate: String, endDate: String ) -> URL {
+    func getHistoricalAPIUrl(startDate: String, endDate: String ) -> URL {
         //generate historical price url
         let urlComps = NSURLComponents(string: "https://api.coindesk.com/v1/bpi/historical/close.json")!
         
@@ -156,7 +156,7 @@ extension CoindeskAPI {
         return url
     }
     
-    private func getRealtimeAPIUrl() -> URL {
+    func getRealtimeAPIUrl() -> URL {
         //generate realtime price url
         var realtimeUrl = "https://api.coindesk.com/v1/bpi/currentprice/"
         realtimeUrl.append(self.currencyCode)
