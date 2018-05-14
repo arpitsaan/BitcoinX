@@ -8,6 +8,9 @@
 
 import UIKit
 
+//----------------------
+// MARK:  View Setup
+//----------------------
 class ViewController: UIViewController {
 
     var coindeskApiObject = CoindeskAPI.init()
@@ -17,9 +20,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "BitcoinX"
         self.view.backgroundColor = UIColor.black
         
+        setupTableView()
+        getData()
+    }
+    
+    func setupTableView() {
         tableView.dataSource = self
         tableView.allowsSelection = false
         tableView.backgroundColor = UIColor.black
@@ -27,30 +34,37 @@ class ViewController: UIViewController {
         
         self.view.addSubview(tableView)
         tableView.fillSuperView()
-        
-        getData()
+    }
+
+    func resetNavigationTitle() {
+        navigationItem.title = "BitcoinX"
+    }
+
+    override var prefersStatusBarHidden: Bool {
+        return false
     }
     
-    func getData() {
-        self.coindeskApiObject.delegate = self
-        self.coindeskApiObject.loadCachedData()
-        self.coindeskApiObject.fetchRealtimeData()
-        self.coindeskApiObject.fetchHistoricalData()
-        navigationItem.title = "Updating..."
-    }
-    
-    @objc func makeRealtimePriceRequest() {
-        self.coindeskApiObject.fetchRealtimeData()
-        navigationItem.title = "Updating..."
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func resetNavigationTitle() {
-        navigationItem.title = "BitcoinX"
+}
+
+
+//------------------------
+// MARK: View Data Logics
+//------------------------
+extension ViewController {
+    func getData() {
+        self.coindeskApiObject.delegate = self
+        self.coindeskApiObject.loadCachedData()
+        self.coindeskApiObject.fetchRealtimeData()
+        self.coindeskApiObject.fetchHistoricalData()
+        navigationItem.title = "Updating..."
     }
     
     func scheduleRealtimePriceUpdate() {
@@ -61,15 +75,15 @@ class ViewController: UIViewController {
                              userInfo: nil, repeats: false)
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return false
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+    @objc func makeRealtimePriceRequest() {
+        self.coindeskApiObject.fetchRealtimeData()
+        navigationItem.title = "Updating..."
     }
 }
 
+//-----------------------
+// MARK: API Delegates
+//-----------------------
 extension ViewController: CoindeskAPIDelegate {
     func cachedDataLoadedSuccessfully() {
         self.tableView.reloadData()
@@ -103,6 +117,9 @@ extension ViewController: CoindeskAPIDelegate {
     }
 }
 
+//--------------------------
+// MARK: Table Data Source
+//--------------------------
 extension ViewController: UITableViewDataSource {
     
     enum tableSection:Int {
@@ -139,6 +156,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         
+            //--------------------
+            // error message cell
+            //--------------------
         case tableSection.errorMessage.rawValue:
             var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXErrorRowIdentifier")
             
@@ -151,6 +171,9 @@ extension ViewController: UITableViewDataSource {
             
             return cell!
             
+            //--------------------
+            // realtime price cell
+            //--------------------
         case tableSection.realtimePrice.rawValue:
             var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRealtimeRowIdentifier")
             
@@ -167,6 +190,9 @@ extension ViewController: UITableViewDataSource {
             
             return cell!
            
+            //-----------------------
+            // historical price cells
+            //-----------------------
         case tableSection.historialPrices.rawValue:
             var cell = tableView.dequeueReusableCell(withIdentifier: "BitcoinXRowIdentifier")
             
@@ -192,7 +218,6 @@ extension ViewController: UITableViewDataSource {
         default:
             return UITableViewCell.init()
         }
-        
     }
 }
 

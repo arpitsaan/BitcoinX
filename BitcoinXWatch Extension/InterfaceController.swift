@@ -9,7 +9,9 @@
 import WatchKit
 import Foundation
 
-
+//----------------------
+// MARK:  View Setup
+//----------------------
 class InterfaceController: WKInterfaceController {
     
     @IBOutlet var pricesTable: WKInterfaceTable!
@@ -17,48 +19,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var statusLabel: WKInterfaceLabel!
     var priceList:HistoricalData?
     var pricesAPI = CoindeskAPI.init()
-    
-    func tableRefresh(){
-        var rowCount = self.pricesAPI.getHistoricalDataRowsCount()
-        rowCount += self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
-
-        guard rowCount>0 else {
-             return
-        }
-        
-        pricesTable.setNumberOfRows(rowCount, withRowType: "BitcoinPriceRow")
-        
-        //realtime price row
-        if self.pricesAPI.isRealtimeDataAvailable() {
-            guard let controller = pricesTable.rowController(at: 0) as? PriceRowController else { return }
-            
-            let rate:Double = (self.pricesAPI.realtimeData?.bpi.eur.rateFloat)!
-            controller.dateLabel.setText(self.pricesAPI.realtimeData?.time.updated)
-            controller.priceLabel.setText(rate.formatAsEuro())
-            controller.priceLabel.setTextColor(UIColor.bxDarkTheme.orange)
-        }
-        
-        //historial prices
-        guard self.pricesAPI.historicalData != nil else {return}
-        
-        let keysArray = Array((self.pricesAPI.historicalData?.bpi.keys)!).sorted(by: >)
-        
-        var index = self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
-        for dateString in keysArray {
-            guard let controller = pricesTable.rowController(at: index) as? PriceRowController
-                else {
-                    statusLabel.setHidden(false)
-                    self.statusLabel.setText("Something went wrong in displaying latest data.")
-                    return
-                }
-            
-            let rate:Double = (self.pricesAPI.historicalData?.bpi[dateString])!
-            controller.dateLabel.setText(dateString)
-            controller.priceLabel.setText(rate.formatAsEuro())
-            controller.priceLabel.setTextColor(UIColor.white)
-            index += 1;
-        }
-    }
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -69,7 +29,12 @@ class InterfaceController: WKInterfaceController {
         statusLabel.setHidden(false)
         statusLabel.setText("Getting the latest exchange rate...")
     }
-    
+}
+
+//------------------------
+// MARK: View Data Logics
+//------------------------
+extension InterfaceController {
     func scheduleRealtimePriceUpdate() {
         //schedule next realtime price update
         Timer.scheduledTimer(timeInterval: CommonHelpers.getRealtimeUpdateInterval(),
@@ -84,6 +49,60 @@ class InterfaceController: WKInterfaceController {
     }
 }
 
+//---------------------------
+// MARK: Table Data Handlers
+//---------------------------
+extension InterfaceController {
+    func tableRefresh(){
+        var rowCount = self.pricesAPI.getHistoricalDataRowsCount()
+        rowCount += self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
+        
+        guard rowCount>0 else {
+            return
+        }
+        
+        pricesTable.setNumberOfRows(rowCount, withRowType: "BitcoinPriceRow")
+        
+        //--------------------
+        // realtime price row
+        //--------------------
+        if self.pricesAPI.isRealtimeDataAvailable() {
+            guard let controller = pricesTable.rowController(at: 0) as? PriceRowController else { return }
+            
+            let rate:Double = (self.pricesAPI.realtimeData?.bpi.eur.rateFloat)!
+            controller.dateLabel.setText(self.pricesAPI.realtimeData?.time.updated)
+            controller.priceLabel.setText(rate.formatAsEuro())
+            controller.priceLabel.setTextColor(UIColor.bxDarkTheme.orange)
+        }
+        
+        //-----------------------
+        // historical price rows
+        //-----------------------
+        guard self.pricesAPI.historicalData != nil else {return}
+        
+        let keysArray = Array((self.pricesAPI.historicalData?.bpi.keys)!).sorted(by: >)
+        
+        var index = self.pricesAPI.isRealtimeDataAvailable() ? 1 : 0
+        for dateString in keysArray {
+            guard let controller = pricesTable.rowController(at: index) as? PriceRowController
+                else {
+                    statusLabel.setHidden(false)
+                    self.statusLabel.setText("Something went wrong in displaying latest data.")
+                    return
+            }
+            
+            let rate:Double = (self.pricesAPI.historicalData?.bpi[dateString])!
+            controller.dateLabel.setText(dateString)
+            controller.priceLabel.setText(rate.formatAsEuro())
+            controller.priceLabel.setTextColor(UIColor.white)
+            index += 1;
+        }
+    }
+}
+
+//------------------------
+// MARK: API Delegates
+//------------------------
 extension InterfaceController: CoindeskAPIDelegate {
     func cachedDataLoadedSuccessfully() {
         self.tableRefresh()

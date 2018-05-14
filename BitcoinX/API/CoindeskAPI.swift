@@ -8,6 +8,9 @@
 
 import UIKit
 
+//----------------------------
+// MARK: Protocol Declaration
+//----------------------------
 protocol CoindeskAPIDelegate: class {
     func cachedDataLoadedSuccessfully()
     
@@ -18,12 +21,15 @@ protocol CoindeskAPIDelegate: class {
     func historialDataFetchFailedWithError(error: Error)
 }
 
+//----------------------------
+// MARK: Exposed API Methods
+//----------------------------
 class CoindeskAPI: NSObject {
-    private var currencyCode = "EUR"
     
     var historicalData:HistoricalData?
     var realtimeData:RealtimeData?
     weak var delegate:CoindeskAPIDelegate?
+    private var currencyCode = "EUR"
     
     func loadCachedData() {
         self.historicalData = CommonHelpers.getHistoricalDataFromDisk()
@@ -49,7 +55,7 @@ class CoindeskAPI: NSObject {
         
         return (historicalData?.bpi.count)!
     }
-
+    
     public func fetchRealtimeData() {
         
         URLSession.shared.dataTask(with: getRealtimeAPIUrl()) { (data, response, error) in
@@ -82,7 +88,11 @@ class CoindeskAPI: NSObject {
     
     public func fetchHistoricalData() {
         
-       URLSession.shared.dataTask(with: getHistoricalAPIUrl()) { (data, response, error) in
+        let startDate = getStartDateString()
+        let endDate = getCurrentDateString()
+        let historicalUrl = getHistoricalAPIUrl(startDate: startDate, endDate: endDate)
+        
+        URLSession.shared.dataTask(with: historicalUrl) { (data, response, error) in
             if error != nil {
                 print(error!.localizedDescription)
                 DispatchQueue.main.async {
@@ -91,7 +101,7 @@ class CoindeskAPI: NSObject {
             }
             
             guard let data = data else { return }
-        
+            
             do {
                 self.historicalData = try JSONDecoder().decode(HistoricalData.self, from: data)
                 
@@ -110,10 +120,13 @@ class CoindeskAPI: NSObject {
     }
 }
 
+//--------------------------
+// MARK: API Helper Methods
+//--------------------------
 extension CoindeskAPI {
     
     private func getStartDateString() -> String {
-        //date for 2 weeks ago
+        //date for 2 weeks earlier
         let startDate = Calendar.current.date(byAdding: .weekOfYear, value: -2, to: Date())!
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -122,7 +135,7 @@ extension CoindeskAPI {
     }
     
     private func getCurrentDateString() -> String {
-        //todays date
+        //today's date
         let todaysDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -130,21 +143,21 @@ extension CoindeskAPI {
         return todaysDateString
     }
     
-    private func getHistoricalAPIUrl() -> URL {
+    private func getHistoricalAPIUrl(startDate: String, endDate: String ) -> URL {
+        //generate historical price url
         let urlComps = NSURLComponents(string: "https://api.coindesk.com/v1/bpi/historical/close.json")!
         
         let queryItems = [NSURLQueryItem(name: "currency", value: self.currencyCode),
-                          NSURLQueryItem(name: "start", value: self.getStartDateString()),
-                          NSURLQueryItem(name: "end", value: self.getCurrentDateString())]
+                          NSURLQueryItem(name: "start", value: startDate),
+                          NSURLQueryItem(name: "end", value: endDate)]
         
         urlComps.queryItems = queryItems as [URLQueryItem]
-        
         guard let url = urlComps.url else { return URL.init(string: "")! }
-        
         return url
     }
     
     private func getRealtimeAPIUrl() -> URL {
+        //generate realtime price url
         var realtimeUrl = "https://api.coindesk.com/v1/bpi/currentprice/"
         realtimeUrl.append(self.currencyCode)
         realtimeUrl.append(".json")
