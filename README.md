@@ -4,10 +4,8 @@
 
 ![BitcoinX shows you exchange rates for bitcoin](/images/bitcoinx-hero.png?raw=true "BitcoinX - EUR to Bitcoin exchange rates on your iPhone and Watch!")
 
-BitcoinX shows the realtime Bitcoin price exchange rate to EUR! and also for the last two weeks. 
-Also comes with an Apple Watch extension!
-
-Clone and hit run on your XCode to try it out.
+BitcoinX shows the realtime Bitcoin exchange rate to EUR! It also gives you the exchange prices for the last 2 weeks.
+For your iPhone and Apple Watch, just clone and hit run on your XCode.
 
 ## Meta
 
