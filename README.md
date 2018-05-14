@@ -15,7 +15,7 @@ Arpit Agarwal – [@My Website](https://arpit.work) – hi@arpit.work
 
 Distributed under the Apache license. See ``LICENSE`` for more information.
 
-[https://github.com/arpitsaan/wordblocks](https://github.com/arpitsaan/)
+[https://github.com/arpitsaan/bitcoinx](https://github.com/arpitsaan/bitcoinx)
 
 [swift-image]:https://img.shields.io/badge/swift-3.0-oradnge.svg
 [swift-url]: https://swift.org/
