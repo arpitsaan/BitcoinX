@@ -11,7 +11,7 @@ Clone and hit run on your XCode to try it out.
 
 ## Meta
 
-Arpit Agarwal – [@My Website](https://arpit.work) – hi@arpit.work
+Arpit Agarwal – [Click here to go to my website](https://arpit.work) – Email me at hi[at]arpit[dot]work
 
 Distributed under the Apache license. See ``LICENSE`` for more information.
 
