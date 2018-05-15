@@ -13,6 +13,15 @@ For your iPhone and Apple Watch, just clone and hit run on your XCode.
 [![Platform](https://img.shields.io/cocoapods/p/LFAlertController.svg?style=flat)](http://cocoapods.org/pods/LFAlertController)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
+## Data flow for BitcoinX apps — Shared local cache
+![Data flow for BitcoinX apps](/images/bx-localcaching.png?raw=true "Data flow for BitcoinX apps")
+
+## Logic flow for the app
+![Logic flow for BitcoinX](/images/bx-flow.png?raw=true "Logic flow for BitcoinX")
+
+## Local data storage manager
+![Local data storage for BitcoinX](/images/bx-datamanager.png?raw=true "Local data storage manager")
+![Data storage protocol](/images/bx-dataprotocol.png?raw=true "Data storage protocol")
 
 ## Meta
 
